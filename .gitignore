@@ -1,0 +1,5 @@
+*.gz
+/result*/
+.ven/
+.vscode/
+__pycache__/
