@@ -26,7 +26,7 @@ The project consists of three main Python scripts:
 
 Each of these files plays a crucial role in the pipeline and helps ensure that the data processing is done accurately and reliably.
 
-# man.py Overview
+# main.py Overview
 
 The provided Python script comprises three primary components:
 
