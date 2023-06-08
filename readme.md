@@ -29,3 +29,8 @@ To run the pipeline, you need the following:
 
    ```bash
    git clone <repository_url>
+
+1. Run the pipeline using the run.bat script:
+
+   ```bash
+   .\run.bat
