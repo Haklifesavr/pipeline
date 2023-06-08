@@ -15,6 +15,7 @@ class FilterAndSumFn(beam.DoFn):
     yields a tuple of (date, transaction_amount) if the year of the transaction is greater 
     than or equal to 2010 and the transaction amount is greater than 20.
     """
+    
     def process(self, element):
         fields = element.split(',')
 
@@ -38,6 +39,7 @@ class ProcessTransactions(beam.PTransform):
     to a .jsonl.gz file. The output file's name includes a timestamp. The PTransform returns 
     a PCollection of the formatted output data.
     """
+
     def expand(self, pcoll):
         timestamp = datetime.datetime.now().strftime("%Y%m%d%H%M%S")  # Generate a timestamp
         result = (
@@ -58,6 +60,7 @@ def run():
     bucket, processes it using the ProcessTransactions PTransform, and writes the results 
     to a .jsonl.gz file. The function does not return a value.
     """
+
     pipeline_options = PipelineOptions()
 
     with beam.Pipeline(options=pipeline_options) as p:

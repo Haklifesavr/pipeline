@@ -14,6 +14,19 @@ The pipeline performs the following steps:
 4. Formats the output as JSON objects.
 5. Writes the JSON objects to a compressed JSONL (JSON Lines) file.
 
+# File Descriptions
+
+The project consists of three main Python scripts:
+
+1. **main.py**: This is the primary script that sets up and runs the Apache Beam pipeline. It includes two classes, `FilterAndSumFn` and `ProcessTransactions`, and a main `run` function. The `FilterAndSumFn` class is a custom DoFn (short for "Do Function") in Apache Beam's model, which processes and filters the transactions. The `ProcessTransactions` class is a custom PTransform (short for "Parallel Transform"), which is used to transform the transaction data. The `run` function sets up and runs the Apache Beam pipeline, reading the transaction data, processing it, and writing the results to a .jsonl.gz file.
+
+2. **download.py**: This script contains the `download_public_file` function, which downloads a file from a given URL and saves it to the specified destination. This function is used to download the transaction data file from a Google Cloud Storage (GCS) bucket. It uses the `requests` library to make the HTTP GET request.
+
+3. **tests.py**: This script contains two unit tests for the `ProcessTransactions` transform: `test_process_transactions_pass` and `test_process_transactions_fail`. The `test_process_transactions_pass` test checks that the `ProcessTransactions` transform correctly processes and transforms valid input data. The `test_process_transactions_fail` test checks that the `ProcessTransactions` transform correctly handles input data that does not meet the filtering criteria and outputs an empty PCollection. These tests are written using the `unittest` and `apache_beam.testing` libraries.
+
+Each of these files plays a crucial role in the pipeline and helps ensure that the data processing is done accurately and reliably.
+
+
 ## Use Case
 
 This Apache Beam pipeline can be leveraged for efficient data processing in cases where large volumes of transaction data need to be filtered, aggregated, and summarized. It can be applied in areas like retail sales analysis, financial transaction monitoring, and IoT data processing. The pipeline's ability to output to a JSONL file makes the resulting data convenient for subsequent analysis, machine learning, and visualization.
