@@ -26,8 +26,21 @@ The project consists of three main Python scripts:
 
 Each of these files plays a crucial role in the pipeline and helps ensure that the data processing is done accurately and reliably.
 
+# man.py Overview
 
-## Use Case
+The provided Python script comprises three primary components:
+
+1. **FilterAndSumFn(beam.DoFn)**: This class is a custom `DoFn` (short for "Do Function") in Apache Beam's model. It serves to process each element of the input data.
+
+    In our specific case, the `FilterAndSumFn` processes transaction data received in the form of CSV strings. It filters transactions based on a condition (transaction year >= 2010 and transaction amount > 20). When these conditions are met, the function outputs a tuple of `(date, transaction_amount)`. If these conditions are not met, the function returns an empty list and the data point is dropped from the pipeline.
+
+2. **ProcessTransactions(beam.PTransform)**: This class is a custom `PTransform` (short for "Parallel Transform"), which is used to transform one or more PCollections (the Apache Beam term for a dataset). 
+
+    The `ProcessTransactions` PTransform processes the input PCollection by applying the `FilterAndSumFn` DoFn, summing the transactions by date, formatting the output into a JSON-like string, and writing the results to a .jsonl.gz file. The filename includes a timestamp for uniqueness. 
+
+3. **run()**: This function sets up and runs the Apache Beam pipeline. It reads transaction data from a Google Cloud Storage (GCS) bucket, applies the `ProcessTransactions` PTransform to the input data, and writes the processed data to a .jsonl.gz file.
+
+## Use Cases
 
 This Apache Beam pipeline can be leveraged for efficient data processing in cases where large volumes of transaction data need to be filtered, aggregated, and summarized. It can be applied in areas like retail sales analysis, financial transaction monitoring, and IoT data processing. The pipeline's ability to output to a JSONL file makes the resulting data convenient for subsequent analysis, machine learning, and visualization.
 
