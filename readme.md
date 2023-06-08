@@ -14,6 +14,10 @@ The pipeline performs the following steps:
 4. Formats the output as JSON objects.
 5. Writes the JSON objects to a compressed JSONL (JSON Lines) file.
 
+## Use Case
+
+This Apache Beam pipeline can be leveraged for efficient data processing in cases where large volumes of transaction data need to be filtered, aggregated, and summarized. It can be applied in areas like retail sales analysis, financial transaction monitoring, and IoT data processing. The pipeline's ability to output to a JSONL file makes the resulting data convenient for subsequent analysis, machine learning, and visualization.
+
 ## Prerequisites
 
 To run the pipeline, you need the following:

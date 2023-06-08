@@ -8,6 +8,13 @@ from apache_beam.options.pipeline_options import PipelineOptions
 
 
 class FilterAndSumFn(beam.DoFn):
+    """
+    A DoFn class that filters and transforms incoming data.
+    
+    The incoming data is expected to be a CSV string. The method processes the data and 
+    yields a tuple of (date, transaction_amount) if the year of the transaction is greater 
+    than or equal to 2010 and the transaction amount is greater than 20.
+    """
     def process(self, element):
         fields = element.split(',')
 
@@ -23,6 +30,14 @@ class FilterAndSumFn(beam.DoFn):
 
 
 class ProcessTransactions(beam.PTransform):
+    """
+    A PTransform class that filters, transforms and writes transaction data.
+
+    The class takes in a PCollection of transaction data as strings, filters and transforms 
+    it using the FilterAndSumFn DoFn, formats the results for output, and writes the results 
+    to a .jsonl.gz file. The output file's name includes a timestamp. The PTransform returns 
+    a PCollection of the formatted output data.
+    """
     def expand(self, pcoll):
         timestamp = datetime.datetime.now().strftime("%Y%m%d%H%M%S")  # Generate a timestamp
         result = (
@@ -36,6 +51,13 @@ class ProcessTransactions(beam.PTransform):
 
 
 def run():
+    """
+    Main function to run the Beam pipeline.
+
+    This function sets up and runs a Beam pipeline that reads transaction data from a GCS 
+    bucket, processes it using the ProcessTransactions PTransform, and writes the results 
+    to a .jsonl.gz file. The function does not return a value.
+    """
     pipeline_options = PipelineOptions()
 
     with beam.Pipeline(options=pipeline_options) as p:

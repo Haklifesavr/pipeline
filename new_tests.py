@@ -6,6 +6,14 @@ import apache_beam as beam
 
 class ProcessTransactionsUnitTestPass(unittest.TestCase):
     def test_process_transactions_pass(self):
+        """
+        Test case for ProcessTransactions with valid input data.
+        
+        The test case feeds valid transaction data into the ProcessTransactions transform 
+        and asserts that the output matches the expected results. The input data is designed 
+        to meet the transform's filtering criteria.
+        """
+
         # Input data containing valid transactions
         input_data = [
             'timestamp,transaction_amount',
@@ -37,6 +45,13 @@ class ProcessTransactionsUnitTestPass(unittest.TestCase):
 
 class ProcessTransactionsUnitTestFail(unittest.TestCase):
     def test_process_transactions_fail(self):
+        """
+        Test case for ProcessTransactions with invalid input data.
+        
+        The test case feeds transaction data that do not meet the filtering criteria into 
+        the ProcessTransactions transform and asserts that the output is an empty PCollection.
+        """
+
         # Input data containing transactions that do not meet the filtering criteria
         input_data = [
             'timestamp,transaction_amount',
