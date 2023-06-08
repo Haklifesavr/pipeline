@@ -74,7 +74,12 @@ To run the pipeline, you need the following:
    ```bash
    git clone <repository_url>
 
-1. Run the pipeline using the run.bat script:
+2. Run the pipeline using the run.bat script (For Windows Users):
 
    ```bash
    .\run.bat
+
+3. Run the pipeline using the run.sh script (For MacOS Users):
+
+   ```bash
+   bash setup.sh
