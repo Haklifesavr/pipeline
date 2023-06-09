@@ -53,10 +53,10 @@ This Apache Beam pipeline can be leveraged for efficient data processing in case
 Here are some simplified scenarios where Apache Beam streaming pipelines can be put to use:
 
 1. **Real-Time Fraud Detection:** Detect fraudulent activities in financial transactions as they occur.
-2. **Live Social Media Analysis:** Monitor and analyze social media posts or comments in real-time, identifying trending topics or real-time sentiment about a brand or product.
+2. **Live Social Media Analysis:** Monitor and analyse social media posts or comments in real-time, identifying trending topics or real-time sentiment about a brand or product.
 3. **E-commerce Personalization:** Keep track of a user's live activity on an e-commerce platform, updating product recommendations based on their activity.
 4. **Health Monitoring:** Process live data from wearable devices, sending alerts to healthcare providers on critical changes in a patient's health status.
-5. **Traffic Monitoring:** Analyze real-time data from GPS and traffic systems, providing live traffic updates and suggestions for re-routing to drivers.
+5. **Traffic Monitoring:** Analyse real-time data from GPS and traffic systems, providing live traffic updates and suggestions for re-routing to drivers.
 6. **Network Security:** Monitor network traffic in real-time to identify potential security threats or breaches.
 7. **Supply Chain Management:** Oversee live data from various points in a supply chain, assisting in identifying and addressing potential issues quickly.
 8. **Customer Support:** Evaluate incoming customer support requests in real-time, helping to prioritize and assign them effectively.
@@ -77,8 +77,9 @@ To run the pipeline, you need the following:
 
 1. Clone this repository:
 
-   ```bash
-   git clone <repository_url>
+   ```
+    git clone <repository_url>
+   ```
 
 2. Initializing a virtual environment:
 
