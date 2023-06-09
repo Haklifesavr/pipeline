@@ -118,11 +118,11 @@ To run the pipeline, you need the following:
     python -m unittest discover -s . -p "*tests.py"
 
 8. Running the entire script at once:
-* Run the pipeline using the run.bat script (For Windows Users):
+* For Windows:
     ```bash
     .\run.bat
 
-* Run the pipeline using the run.sh script (For MacOS Users):
+* For MacOS:
     ```bash
     chmod +x run.sh
     ./run.sh
