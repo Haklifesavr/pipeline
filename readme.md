@@ -81,4 +81,5 @@ To run the pipeline, you need the following:
 
 * Run the pipeline using the run.sh script (For MacOS Users):
     ```bash
+    chmod +x run.sh
     bash setup.sh
