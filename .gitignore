@@ -1,6 +1,5 @@
 *.gz
 *.zip
-spark-pipeline.zip
 /result*/
 .ven/
 .venv/
