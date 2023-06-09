@@ -117,7 +117,7 @@ To run the pipeline, you need the following:
     ```bash
     python -m unittest discover -s . -p "*tests.py"
 
-8. Running the entire script at once:
+8. Running the entire project at once:
 * For Windows:
     ```bash
     .\run.bat
