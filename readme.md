@@ -77,9 +77,8 @@ To run the pipeline, you need the following:
 
 1. Clone this repository:
 
-   ```
-    git clone <repository_url>
-   ```
+   ```bash
+   git clone <repository_url>
 
 2. Initializing a virtual environment:
 
@@ -88,9 +87,14 @@ To run the pipeline, you need the following:
 
 3. Activating the virtual environment:
 
+* For Windows
     ```bash
     cd .venv/scripts
     .\activate
+
+* For MacOS
+    ```bash
+    source .venv/bin/activate
 
 4. Activating the virtual environment:
 
