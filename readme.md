@@ -80,7 +80,39 @@ To run the pipeline, you need the following:
    ```bash
    git clone <repository_url>
 
-2. Running the Script:
+2. Initializing a virtual environment:
+
+    ```bash
+    python -m venv .venv
+
+3. Activating the virtual environment:
+
+    ```bash
+    cd .venv/scripts
+    .\activate
+
+4. Activating the virtual environment:
+
+    ```bash
+    cd .venv/scripts
+    .\activate
+
+5. Installing requirements:
+
+    ```bash
+    pip install -r requirements.txt
+
+6. Running the main pipeline:
+
+    ```bash
+    python main.py
+
+7. Running the unit tests:
+
+    ```bash
+    python -m unittest discover -s . -p "*tests.py"
+
+8. Running the entire script at once:
 * Run the pipeline using the run.bat script (For Windows Users):
     ```bash
     .\run.bat
