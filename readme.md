@@ -126,3 +126,7 @@ To run the pipeline, you need the following:
     ```bash
     chmod +x run.sh
     ./run.sh
+
+## References
+
+- [Apache Beam Programming Guide](https://beam.apache.org/documentation/programming-guide/): This article provides a comprehensive guide to Apache Beam programming, explaining the concepts, transforms, and pipeline patterns used in the code example provided above.
