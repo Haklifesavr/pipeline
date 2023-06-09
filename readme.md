@@ -129,4 +129,7 @@ To run the pipeline, you need the following:
 
 ## References
 
+The following reference was used as a source of inspiration and guidance for the development of this Apache Beam pipeline:
+
 - [Apache Beam Programming Guide](https://beam.apache.org/documentation/programming-guide/): This article provides a comprehensive guide to Apache Beam programming, explaining the concepts, transforms, and pipeline patterns used in the code example provided above.
+- [Hands on Apache Beam, building pipelines in Python](https://towardsdatascience.com/hands-on-apache-beam-building-data-pipelines-in-python-6548898b66a5): This article on Towards Data Science serves as a practical guide to building data pipelines with Apache Beam in Python. It offers hands-on examples and insights that can further enhance your understanding of Apache Beam pipeline development.
