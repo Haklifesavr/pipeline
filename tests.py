@@ -42,13 +42,12 @@ class ProcessTransactionsUnitTestPass(unittest.TestCase):
             # Assert that the output matches the expected output
             assert_that(result, equal_to(expected_output))
 
-
 class ProcessTransactionsUnitTestFail(unittest.TestCase):
-    def test_process_transactions_fail(self):
+    def test_process_transactions_with_invalid_input(self):
         """
         Test case for ProcessTransactions with invalid input data.
         
-        The test case feeds transaction data that do not meet the filtering criteria into 
+        The test case feeds transaction data that does not meet the filtering criteria into 
         the ProcessTransactions transform and asserts that the output is an empty PCollection.
         """
 
@@ -68,6 +67,15 @@ class ProcessTransactionsUnitTestFail(unittest.TestCase):
             # Apply the ProcessTransactions transform
             result = input_pcoll | ProcessTransactions()
 
+            # Modify the expected output to include some data
+            expected_output = [
+                '{"date": "2022-01-01", "sum": 25.0}',  # Include data that should not be present
+                '{"date": "2022-01-02", "sum": 30.0}',  # Include data that should not be present
+                '{"date": "2022-01-03", "sum": 40.0}'   # Include data that should not be present
+            ]
+
             # Assert that the output PCollection is empty
             assert_that(result, is_empty())
 
+            # Assert that the output does not match the modified expected output
+            assert_that(result, equal_to(expected_output), label="Fail test")

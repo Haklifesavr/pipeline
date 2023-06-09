@@ -8,11 +8,17 @@ The Apache Beam pipeline reads transaction data from a CSV file, applies filters
 
 The pipeline performs the following steps:
 
-1. Reads the transaction data from a CSV file.
-2. Filters and maps the transactions to key-value pairs based on certain criteria.
-3. Combines the transactions by date and calculates the sum of transaction amounts.
-4. Formats the output as JSON objects.
-5. Writes the JSON objects to a compressed JSONL (JSON Lines) file.
+1. **Data Reading**: The pipeline reads transaction data from a CSV file, serving as the input source for subsequent transformations.
+
+2. **Filtering and Mapping**: Transactions are filtered and transformed based on specified criteria. The pipeline selects specific transactions and maps them into key-value pairs, extracting relevant information for further processing.
+
+3. **Combining and Summarizing**: The pipeline combines transactions by date and calculates the sum of transaction amounts. This step aggregates the data, providing a consolidated view of the total transaction amount for each date.
+
+4. **JSON Formatting**: The pipeline formats the aggregated data into JSON objects. Each object represents a summarized transaction, containing the date and the corresponding sum of transaction amounts. The JSON format facilitates easy data manipulation and analysis.
+
+5. **Output Generation**: The pipeline writes the formatted JSON objects to a compressed JSONL (JSON Lines) file. This output file stores the summarized transaction data in a compressed format, ensuring efficient storage and enabling further analysis or data exchange.
+
+By leveraging Apache Beam's capabilities, this pipeline ensures efficient and scalable processing of transaction data while providing flexibility to run on different execution engines, such as Apache Flink, Apache Spark, or Google Cloud Dataflow.
 
 # File Descriptions
 
